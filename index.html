@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>NIFTY-50 Dashboard</title>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  
+  
+  <div class="page">
+
+    <nav class="top-nav">
+      <a href="intro.html">Introduction & Data</a>
+      <a href="index.html"class="active">Cumulative Visualizations</a>
+      <a href="financial_sector.html">Financial Sector</a>
+      <a href="technology_sector.html">Technology Sector</a>
+      <a href="energysector.html" >Energy Sector</a>
+      <a href="analysis.html">Final Analysis</a>
+  </nav>
+
+
+
+<h2>Sector Volatility 2000-2021 </h2>
+<iframe 
+    src="sector_volatility.html"
+    width="100%"
+    height="550"
+    style="border: none; border-radius: 12px; margin-top: 10px;">
+</iframe>
+
+<h2>Sector Return vs Volume Over Time (NIFTY-50)</h2>
+
+<div class="controls">
+  <label for="sectorSelect">Sector:</label>
+  <select id="sectorSelect">
+      <option value="All">All</option>
+      <option value="Financial">Financial</option>
+      <option value="Technology">Technology</option>
+      <option value="Energy">Energy</option>
+  </select>
+
+  <label for="yearSlider">Year:</label>
+  <input id="yearSlider" type="range" min="2000" max="2021" value="2000" step="1">
+  <span id="yearLabel" style="font-weight: bold;">2000</span>
+</div>
+
+<div id="chart"></div>
+
+<h2 style="margin-top: 40px;">Cumulative Sector Returns (Altair Visualization)</h2>
+<iframe 
+    src="cumulative_returns.html"
+    width="800"
+    height="500"
+    style="border: none; border-radius: 12px; margin-top: 10px;">
+</iframe>
+
+<script>
+
+const width = 800;
+const height = 500;
+const margin = {top: 50, right: 150, bottom: 60, left: 100};
+
+const svg = d3.select("#chart").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", `translate(${margin.left},${margin.top})`);
+
+const color = d3.scaleOrdinal()
+    .domain(["Financial","Technology","Energy"])
+    .range(["#1f77b4","#ff7f0e","#2ca02c"]);
+
+d3.csv("sector_yearly_data.csv").then(data => {
+  data.forEach(d => {
+    d.Year = +d.Year;
+    d.AvgReturn = +d.AvgReturn;
+    d.AvgVolume = +d.AvgVolume;
+  });
+
+  const x = d3.scaleLinear()
+      .domain(d3.extent(data, d => d.AvgReturn)).nice()
+      .range([0, width]);
+
+  const y = d3.scaleLinear()
+      .domain(d3.extent(data, d => d.AvgVolume)).nice()
+      .range([height, 0]);
+
+  svg.append("g")
+      .attr("transform", `translate(0,${height})`)
+      .call(d3.axisBottom(x));
+
+
+  svg.append("g")
+      .call(d3.axisLeft(y).tickFormat(d3.format("~s")));
+
+
+  svg.append("text")
+      .attr("x", width / 2)
+      .attr("y", height + 45)
+      .style("text-anchor", "middle")
+      .text("Average Return");
+
+
+  svg.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", -70) 
+      .attr("x", -height / 2)
+      .attr("dy", "1em")
+      .style("text-anchor", "middle")
+      .text("Average Volume");
+
+      function update(year) {
+  const selectedSector = d3.select("#sectorSelect").property("value");
+
+  // filter by year first
+  let filteredData = data.filter(d => d.Year === year);
+
+  // then filter by sector if not "All"
+  if (selectedSector !== "All") {
+    filteredData = filteredData.filter(d => d.Sector === selectedSector);
+  }
+
+  const u = svg.selectAll("circle")
+    .data(filteredData, d => d.Sector);
+
+  u.join(
+    enter => enter.append("circle")
+      .attr("cx", d => x(d.AvgReturn))
+      .attr("cy", d => y(d.AvgVolume))
+      .attr("r", 12)
+      .attr("fill", d => color(d.Sector))
+      .attr("opacity", 0.8)
+      .attr("stroke", "#333")
+      .attr("stroke-width", 1),
+
+    update => update
+      .transition().duration(600)
+      .attr("cx", d => x(d.AvgReturn))
+      .attr("cy", d => y(d.AvgVolume)),
+
+    exit => exit.remove()
+  );
+}
+
+
+  update(2000);
+
+  d3.select("#yearSlider").on("input", function() {
+    const year = +this.value;
+    d3.select("#yearLabel").text(year);
+    update(year);
+  });
+
+
+  const legend = svg.selectAll(".legend")
+      .data(color.domain())
+      .enter().append("g")
+      .attr("class","legend")
+   
+      .attr("transform", (d,i) => `translate(${width + 30},${i * 25})`);
+
+  legend.append("rect")
+      .attr("width", 15)
+      .attr("height", 15)
+      .attr("fill", d => color(d));
+
+  legend.append("text")
+      .attr("x", 20)
+      .attr("y", 12)
+      .text(d => d);
+
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Technology Sector - NIFTY-50</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .analysis-box {
+      background-color: #1e3a5f;
+      padding: 25px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 4px solid #00d4ff;
+      color: #ffffff;
+    }
+    .analysis-box h3 {
+      margin-top: 0;
+      color: #00d4ff;
+      font-weight: bold;
+    }
+    .analysis-box p {
+      line-height: 1.8;
+      margin: 10px 0;
+      color: #e8f4f8;
+    }
+    .analysis-box ul {
+      color: #e8f4f8;
+    }
+    .analysis-box strong {
+      color: #ffffff;
+      font-weight: bold;
+    }
+    .key-insight {
+      background-color: #2c5282;
+      padding: 18px;
+      border-radius: 6px;
+      margin: 15px 0;
+      border-left: 4px solid #fbbf24;
+      color: #ffffff;
+    }
+    .key-insight strong {
+      color: #fbbf24;
+    }
+    .sector-overview {
+      background-color: #1e3a5f;
+      padding: 25px;
+      border-radius: 8px;
+      margin: 30px 0;
+      border-left: 4px solid #00d4ff;
+    }
+    .sector-overview h2 {
+      margin-top: 0;
+      color: #00d4ff;
+    }
+    .sector-overview p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #e8f4f8;
+    }
+    .conclusions-box {
+      background-color: #1e3a5f;
+      padding: 30px;
+      border-radius: 8px;
+      margin: 50px 0;
+      border-left: 6px solid #fbbf24;
+      color: #ffffff;
+    }
+    .conclusions-box h2 {
+      margin-top: 0;
+      color: #fbbf24;
+    }
+    .conclusions-box h3 {
+      color: #00d4ff;
+      margin-top: 30px;
+    }
+    .conclusions-box ul {
+      line-height: 2;
+      color: #e8f4f8;
+    }
+    .conclusions-box strong {
+      color: #ffffff;
+      font-weight: bold;
+    }
+    .conclusions-box p {
+      color: #e8f4f8;
+    }
+    .metrics-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+      background-color: #2d3748;
+    }
+    .metrics-table th {
+      padding: 12px;
+      text-align: left;
+      border: 1px solid #4a5568;
+      background-color: #1a202c;
+      color: #00d4ff;
+      font-weight: bold;
+    }
+    .metrics-table td {
+      padding: 12px;
+      border: 1px solid #4a5568;
+      color: #e8f4f8;
+    }
+    .metrics-table tr:nth-child(even) {
+      background-color: #374151;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <nav class="top-nav">
+      <a href="intro.html">Introduction & Data</a>
+      <a href="index.html">Cumulative Visualizations</a>
+      <a href="financial_sector.html">Financial Sector</a>
+      <a href="technology_sector.html"class="active">Technology Sector</a>
+      <a href="energysector.html" >Energy Sector</a>
+      <a href="analysis.html">Final Analysis</a>
+  </nav>
+
+    <h1>Technology Sector Analysis (2004-2021)</h1>
+
+    <div class="sector-overview">
+      <h2>📊 Sector Overview</h2>
+      <p>
+        The Technology sector comprises four major Indian IT services companies: 
+        <strong>Infosys (INFY)</strong>, <strong>Tata Consultancy Services (TCS)</strong>, 
+        <strong>HCL Technologies (HCLTECH)</strong>, and <strong>Wipro (WIPRO)</strong>. 
+        These companies represent the backbone of India's $227 billion IT industry, providing 
+        software development, consulting, and business process outsourcing to global clients.
+      </p>
+      <p>
+        Our analysis spans <strong>4,139 trading days</strong> from August 25, 2004 to April 30, 2021, 
+        chosen to align with TCS's IPO date. This 17-year period encompasses major economic events 
+        including the 2008 financial crisis and 2020 COVID-19 pandemic.
+      </p>
+    </div>
+
+    <!-- VISUALIZATION 1 -->
+    <h2>1. Stock Price History (2004-2021)</h2>
+    <iframe 
+        src="tech_stock_prices.html"
+        width="100%"
+        height="650"
+        style="border: none; border-radius: 12px; margin-top: 10px;">
+    </iframe>
+
+    <div class="analysis-box">
+      <h3>📈 Why This Matters</h3>
+      <p>
+        <strong>Context:</strong> Stock price history reveals the long-term trajectory and resilience 
+        of each company. Unlike cumulative returns (which normalize to a starting value of 1), actual 
+        prices show the real rupee value that investors would have seen in their portfolios.
+      </p>
+      <p>
+        <strong>Key Observations:</strong>
+      </p>
+      <ul style="line-height: 1.8;">
+        <li><strong>TCS</strong> demonstrated the most consistent upward trajectory, growing from ₹200-300 at IPO to over ₹3,000 by 2021</li>
+        <li><strong>HCL Tech</strong> experienced a dramatic surge between 2012-2017, quintupling from ₹400 to ₹2,000+</li>
+        <li><strong>Infosys and Wipro</strong> showed stagnation, with prices in 2021 barely above their 2007 peaks</li>
+        <li>The 2008 crisis caused 40-60% declines across all stocks, but recovery patterns diverged significantly</li>
+      </ul>
+      <div class="key-insight">
+        <strong>💡 Takeaway:</strong> The price chart reveals that within the same booming sector, 
+        individual stock selection mattered enormously. TCS investors saw 15x gains while Infosys/Wipro 
+        investors barely broke even over 17 years.
+      </div>
+    </div>
+
+    <!-- VISUALIZATION 2 -->
+    <h2>2. Rolling Volatility (Risk Profile)</h2>
+    <iframe 
+        src="tech_volatility.html"
+        width="100%"
+        height="650"
+        style="border: none; border-radius: 12px; margin-top: 10px;">
+    </iframe>
+
+    <div class="analysis-box">
+      <h3>📊 Why This Matters</h3>
+      <p>
+        <strong>Context:</strong> Volatility measures the standard deviation of daily returns over a 
+        60-day rolling window, annualized by multiplying by √252. It quantifies risk—high volatility means 
+        larger price swings and greater uncertainty for investors. This metric is crucial for portfolio 
+        management and understanding risk-adjusted returns.
+      </p>
+      <p>
+        <strong>Key Observations:</strong>
+      </p>
+      <ul style="line-height: 1.8;">
+        <li><strong>2008 Crisis:</strong> Volatility spiked to unprecedented levels of 120%+, indicating extreme market panic and daily price swings exceeding 7-8%</li>
+        <li><strong>COVID-19 (2020):</strong> Volatility reached 60-105%, severe but recovering faster than 2008, showing market confidence in tech sector resilience</li>
+        <li><strong>TCS</strong> maintained the lowest average volatility (32.26%) over the period—a hallmark of stable, predictable performance</li>
+        <li><strong>HCL Tech</strong> showed highest volatility (37.24%), reflecting its dramatic growth spurts and higher risk profile</li>
+        <li>Infosys and Wipro had similar volatility to HCL but without commensurate returns—the worst risk/reward profile</li>
+      </ul>
+      <div class="key-insight">
+        <strong>💡 Takeaway:</strong> TCS achieved superior returns with lower volatility—the ideal combination. 
+        Meanwhile, Infosys and Wipro demonstrated that high risk doesn't guarantee high returns. Volatility analysis 
+        helps investors understand what level of portfolio fluctuation to expect.
+      </div>
+    </div>
+
+    <!-- VISUALIZATION 3 -->
+    <h2>3. Trading Volume Trends</h2>
+    <iframe 
+        src="tech_volume.html"
+        width="100%"
+        height="650"
+        style="border: none; border-radius: 12px; margin-top: 10px;">
+    </iframe>
+
+    <div class="analysis-box">
+      <h3>📊 Why This Matters</h3>
+      <p>
+        <strong>Context:</strong> Trading volume indicates market liquidity and investor interest. High volume 
+        suggests active trading and easy entry/exit, while volume spikes during crises reveal panic selling 
+        or opportunistic buying. Volume trends also reflect changing market capitalization and institutional 
+        ownership over time.
+      </p>
+      <p>
+        <strong>Key Observations:</strong>
+      </p>
+      <ul style="line-height: 1.8;">
+        <li><strong>Long-term growth:</strong> All four stocks showed increasing trading volume from 2004 to 2021, reflecting growing market capitalization and investor participation</li>
+        <li><strong>Crisis spikes:</strong> Both 2008 and 2020 saw dramatic volume increases as investors rushed to reposition portfolios</li>
+        <li><strong>TCS volume surge post-2018:</strong> Trading volume nearly doubled, coinciding with its emergence as India's most valuable IT company (₹12+ trillion market cap)</li>
+        <li><strong>Infosys maintained highest average volume</strong> throughout the period due to its large institutional ownership and index weight</li>
+      </ul>
+      <div class="key-insight">
+        <strong>💡 Takeaway:</strong> High trading volume ensures that investors can buy or sell large 
+        positions without significantly moving the price. All four tech stocks maintain excellent liquidity, 
+        making them suitable for institutional portfolios. Volume spikes during crises created both risks 
+        (panic selling) and opportunities (buying at depressed prices).
+      </div>
+    </div>
+
+    <!-- VISUALIZATION 4 -->
+    <h2>4. Annual Returns (Interactive)</h2>
+    <p style="font-style: italic; color: #555;">Click on legend items to highlight specific stocks</p>
+    <iframe 
+        src="tech_annual_returns.html"
+        width="100%"
+        height="650"
+        style="border: none; border-radius: 12px; margin-top: 10px;">
+    </iframe>
+
+    <div class="analysis-box">
+      <h3>📊 Why This Matters</h3>
+      <p>
+        <strong>Context:</strong> Annual returns break down performance year-by-year, revealing consistency 
+        versus volatility. A stock might have good cumulative returns but get there through extreme ups and 
+        downs. Annual data helps investors understand the year-to-year experience of holding these stocks 
+        and identify periods of outperformance or underperformance.
+      </p>
+      <p>
+        <strong>Key Observations:</strong>
+      </p>
+      <ul style="line-height: 1.8;">
+        <li><strong>2008:</strong> All stocks posted negative returns (−40% to −60%), confirming sector-wide impact of the financial crisis</li>
+        <li><strong>2009 recovery:</strong> Strong rebounds (40-80% gains) as markets recovered and IT outsourcing demand surged</li>
+        <li><strong>2012-2017:</strong> HCL Tech's golden era with consistent 20-40% annual returns, driven by aggressive client acquisition</li>
+        <li><strong>2020:</strong> Despite COVID, tech stocks posted positive returns as digital transformation accelerated globally</li>
+        <li><strong>TCS consistency:</strong> Fewer extreme down years compared to peers, demonstrating stable business model</li>
+        <li><strong>Infosys/Wipro:</strong> Multiple negative years (2011, 2013, 2015-2018), explaining their poor cumulative performance</li>
+      </ul>
+      <div class="key-insight">
+        <strong>💡 Takeaway:</strong> The interactive chart reveals that TCS achieved superior long-term 
+        returns not through spectacular individual years, but through consistency—fewer down years and steady 
+        positive performance. HCL Tech had higher peaks but also deeper valleys. For long-term investors, 
+        consistency often beats volatility.
+      </div>
+    </div>
+
+    <!-- VISUALIZATION 5 -->
+    <h2>5. Risk vs. Return Profile</h2>
+    <iframe 
+        src="tech_risk_return.html"
+        width="100%"
+        height="650"
+        style="border: none; border-radius: 12px; margin-top: 10px;">
+    </iframe>
+
+    <div class="analysis-box">
+      <h3>📊 Why This Matters</h3>
+      <p>
+        <strong>Context:</strong> This scatter plot synthesizes our entire analysis into a single powerful 
+        visualization. The x-axis shows average volatility (risk), the y-axis shows total return (reward), 
+        and the Sharpe Ratio (shown on hover) measures risk-adjusted return. The ideal position is 
+        top-left: high returns with low risk.
+      </p>
+      <p>
+        <strong>Key Observations:</strong>
+      </p>
+      <ul style="line-height: 1.8;">
+        <li><strong>TCS (Top-Left Quadrant):</strong> 207% return with 32.26% volatility = Best risk-adjusted performance. Sharpe Ratio confirms this is the optimal investment</li>
+        <li><strong>HCL Tech (Top-Center):</strong> 182% return but 37.24% volatility = High reward but also high risk. Good for aggressive investors</li>
+        <li><strong>Infosys & Wipro (Bottom-Right):</strong> Negative returns despite high volatility = Worst possible outcome. High risk without reward</li>
+        <li>The quadrant lines show that only TCS and HCL Tech exceeded both average sector return and average sector volatility positively</li>
+      </ul>
+      <div class="key-insight">
+        <strong>💡 Takeaway:</strong> This chart answers "Which stock should I buy?" 
+        For risk-averse investors seeking steady growth: <strong>TCS</strong> (lower-left, best risk-adjusted). 
+        For aggressive growth investors willing to accept volatility: <strong>HCL Tech</strong> (top-center, highest returns). 
+        Avoid: <strong>Infosys/Wipro</strong> (bottom-right, high risk with negative returns). The visualization 
+        demonstrates that within the same sector, risk-return profiles can differ dramatically.
+      </div>
+    </div>
+
+    <!-- OVERALL CONCLUSIONS -->
+    <div class="conclusions-box">
+      <h2>🎯 Overall Technology Sector Conclusions</h2>
+      
+      <h3>Investment Implications</h3>
+      <ul>
+        <li><strong>Sector doesn't guarantee success:</strong> Despite India's IT boom delivering 261% average returns, 
+            individual stock selection was critical—you could still pick losers (Infosys/Wipro with negative returns)</li>
+        
+        <li><strong>Market leadership premium:</strong> TCS's position as India's largest IT company (by revenue and 
+            market cap) translated to superior risk-adjusted returns. Market leaders often deliver more predictable results</li>
+        
+        <li><strong>Growth vs. Volatility trade-off:</strong> HCL Tech achieved spectacular returns (182%) but required 
+            tolerance for 37% volatility. Investors must match stock choice to risk tolerance</li>
+        
+        <li><strong>Crisis resilience varies:</strong> The 2008 crisis revealed long-term divergence: TCS/HCL recovered 
+            strongly while Infosys/Wipro never regained momentum. Recovery patterns predict long-term success</li>
+        
+        <li><strong>COVID accelerated tech dominance:</strong> Unlike 2008 (which took years to recover), tech stocks 
+            bounced back quickly from COVID as digital transformation became urgent for all businesses</li>
+      </ul>
+
+      <h3>Key Metrics Summary</h3>
+      <table class="metrics-table">
+        <tr>
+          <th>Stock</th>
+          <th style="text-align: right;">Total Return</th>
+          <th style="text-align: right;">Avg. Volatility</th>
+          <th>Verdict</th>
+        </tr>
+        <tr>
+          <td><strong>TCS</strong></td>
+          <td style="text-align: right; color: #10b981;"><strong>+207%</strong></td>
+          <td style="text-align: right;">32.26%</td>
+          <td>🏆 Best risk-adjusted returns</td>
+        </tr>
+        <tr>
+          <td><strong>HCL Tech</strong></td>
+          <td style="text-align: right; color: #10b981;"><strong>+182%</strong></td>
+          <td style="text-align: right;">37.24%</td>
+          <td>💪 High returns, high risk</td>
+        </tr>
+        <tr>
+          <td><strong>Infosys</strong></td>
+          <td style="text-align: right; color: #ef4444;"><strong>−12%</strong></td>
+          <td style="text-align: right;">34.89%</td>
+          <td>⚠️ High risk, negative return</td>
+        </tr>
+        <tr>
+          <td><strong>Wipro</strong></td>
+          <td style="text-align: right; color: #ef4444;"><strong>−13%</strong></td>
+          <td style="text-align: right;">35.12%</td>
+          <td>⚠️ High risk, negative return</td>
+        </tr>
+      </table>
+
+      <p style="margin-top: 30px; font-size: 16px; font-weight: bold; color: #fbbf24;">
+        📌 Final Takeaway: In India's technology sector (2004-2021), TCS delivered the best combination 
+        of growth and stability, HCL Tech offered higher returns for risk-tolerant investors, while 
+        Infosys and Wipro demonstrated that even in a booming sector, poor execution leads to 
+        value destruction despite high volatility.
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Project Introduction & Data</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- Navigation -->
+    <nav class="top-nav">
+      <a href="intro.html"class="active">Introduction & Data</a>
+      <a href="index.html">Cumulative Visualizations</a>
+      <a href="financial_sector.html">Financial Sector</a>
+      <a href="technology_sector.html">Technology Sector</a>
+      <a href="energysector.html" >Energy Sector</a>
+      <a href="analysis.html">Final Analysis</a>
+  </nav>
+    <h1>Sector Trends in the NIFTY-50 (2000–2021)</h1>
+  
+    <p>
+      This project explores how three major sectors in the Indian stock market —
+      <strong>Technology, Finance, and Energy</strong> — have evolved from 2000 to 2021 within the
+      NIFTY-50 index. The NIFTY-50 represents 50 of the largest and most actively traded companies
+      on the National Stock Exchange of India. We focus on long-term sector behavior to understand
+      how different parts of the economy grow, react to crises, and contribute to overall market performance.
+    </p>
+  
+    <p>
+      Our main goals are to:
+    </p>
+    <ul>
+      <li>Compare sector performance over time using returns and cumulative returns.</li>
+      <li>Examine sector <strong>volatility</strong> and how risk changes around major events like the 2008 global recession and the 2020 COVID-19 shock.</li>
+      <li>Analyze how <strong>trading activity</strong> (volume) relates to returns across sectors.</li>
+      <li>Build interactive visualizations that let users explore how sector behavior changes across years.</li>
+    </ul>
+  
+    <h2>Data Description</h2>
+  
+    <p>
+      We use the <strong>“NIFTY-50 Stock Market Data (2000–2021)”</strong> dataset from Kaggle. The full dataset
+      contains daily price and volume data for all 50 NIFTY-50 companies, with each company stored in a separate CSV file
+      and roughly 1,000–3,000 daily observations and around 15 columns per file (including date, OHLC prices, and volume). 
+    </p>
+  
+    <p>
+      For this project, we focus on 12 representative stocks: four from each of the three sectors.
+    </p>
+  
+    <ul>
+      <li><strong>Technology</strong>: Infosys (INFY), Tata Consultancy Services (TCS), HCL Technologies (HCLTECH), Wipro (WIPRO)</li>
+      <li><strong>Finance</strong>: HDFC Bank (HDFCBANK), ICICI Bank (ICICIBANK), State Bank of India (SBIN), Kotak Mahindra Bank (KOTAKBANK)</li>
+      <li><strong>Energy</strong>: Reliance Industries (RELIANCE), Oil and Natural Gas Corporation (ONGC), NTPC (NTPC), Power Grid Corporation (POWERGRID)</li>
+    </ul>
+  
+    <p>
+      From the raw daily data, we compute derived metrics such as daily returns, sector-level average returns,
+      average trading volume, and cumulative sector returns over time. These transformed features feed into our
+      Altair and D3 visualizations on the main page.
+    </p>
+  
+    <h2>Why This Data Works for Our Topic</h2>
+  
+    <p>
+      This dataset is well-suited to our topic because it:
+    </p>
+    <ul>
+      <li>Covers more than <strong>20 years</strong> of trading history (2000–2021), allowing us to study long-term trends.</li>
+      <li>Includes <strong>continuous variables</strong> (prices, returns, volume) and <strong>categorical variables</strong> (sector, symbol).</li>
+      <li>Contains enough observations to smooth out noise and still reveal clear sector-level patterns.</li>
+      <li>Captures major market events (dot-com aftermath, 2008 crisis, COVID-19) within the time window.</li>
+    </ul>
+  
+    <p>
+      One limitation is that we only use 4 companies per sector, so our sector-level results are an approximation of the
+      true full sector behavior. In addition, the dataset focuses on price and volume, so it does not include fundamentals
+      such as earnings, balance sheet ratios, or macroeconomic indicators that could also affect sector performance.
+    </p>
+  
+    <h2>References</h2>
+  
+    <p>Some background and context for our analysis:</p>
+    <ul>
+      <li>
+        <a href="https://www.allfinancejournal.com/article/view/477/8-1-67" target="_blank">
+          All Finance Journal – NIFTY-50 performance and sector analysis
+        </a>
+      </li>
+      <li>
+        <a href="https://www.bmsmoney.com/article/full/decades-of-nifty-50-performance-a-comprehensive-analysis-of-returns-from-1991-to-2024/" target="_blank">
+          Decades of NIFTY-50 Performance (1991–2024)
+        </a>
+      </li>
+      <li>
+        <a href="https://nsearchives.nseindia.com/content/indices/25_Years_Journey_of_Nifty50_2022-01.pdf" target="_blank">
+          25 Years Journey of NIFTY-50 – NSE India
+        </a>
+      </li>
+      <li>
+        <a href="https://primeinvestor.in/nifty-50-returns/" target="_blank">
+          PrimeInvestor – Historical NIFTY-50 Returns
+        </a>
+      </li>
+    </ul>
+  </section>
+  

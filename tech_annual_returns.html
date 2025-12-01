@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@6"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@6.1.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@7"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-0b033fdf029fbea32fe9fc045220db56"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "Stock", "title": "Stock", "type": "nominal"}, "opacity": {"condition": {"param": "param_de19a7b4e5cd640e", "value": 1}, "value": 0.2}, "tooltip": [{"field": "Year", "type": "ordinal"}, {"field": "Annual_Return", "format": ".2%", "title": "Return", "type": "quantitative"}, {"field": "Stock", "type": "nominal"}], "x": {"field": "Year", "title": "Year", "type": "ordinal"}, "y": {"axis": {"format": ".0%"}, "field": "Annual_Return", "title": "Annual Return", "type": "quantitative"}}, "height": 600, "params": [{"name": "param_de19a7b4e5cd640e", "select": {"type": "point", "fields": ["Stock"]}, "bind": "legend"}], "title": "Technology Sector: Annual Returns by Stock (Click legend to filter)", "width": 1000, "$schema": "https://vega.github.io/schema/vega-lite/v6.1.0.json", "datasets": {"data-0b033fdf029fbea32fe9fc045220db56": [{"Year": 2004, "Stock": "Infosys", "Annual_Return": 0.3196216176063025}, {"Year": 2005, "Stock": "Infosys", "Annual_Return": 0.3937479932248614}, {"Year": 2006, "Stock": "Infosys", "Annual_Return": -0.046566888222784764}, {"Year": 2007, "Stock": "Infosys", "Annual_Return": -0.18809698395402463}, {"Year": 2008, "Stock": "Infosys", "Annual_Return": -0.34591413089956136}, {"Year": 2009, "Stock": "Infosys", "Annual_Return": 0.9174471533925973}, {"Year": 2010, "Stock": "Infosys", "Annual_Return": 0.3028851286889195}, {"Year": 2011, "Stock": "Infosys", "Annual_Return": -0.17478234764430256}, {"Year": 2012, "Stock": "Infosys", "Annual_Return": -0.14054462913357157}, {"Year": 2013, "Stock": "Infosys", "Annual_Return": 0.4722302043818565}, {"Year": 2014, "Stock": "Infosys", "Annual_Return": -0.33169391134910864}, {"Year": 2015, "Stock": "Infosys", "Annual_Return": -0.3521865710911225}, {"Year": 2016, "Stock": "Infosys", "Annual_Return": -0.06225615486485658}, {"Year": 2017, "Stock": "Infosys", "Annual_Return": 0.05611562755536481}, {"Year": 2018, "Stock": "Infosys", "Annual_Return": -0.2502244510934548}, {"Year": 2019, "Stock": "Infosys", "Annual_Return": 0.1426820244647069}, {"Year": 2020, "Stock": "Infosys", "Annual_Return": 0.6205340607231856}, {"Year": 2021, "Stock": "Infosys", "Annual_Return": 0.08504061912139915}, {"Year": 2004, "Stock": "Wipro", "Annual_Return": 0.29154178741635095}, {"Year": 2005, "Stock": "Wipro", "Annual_Return": -0.24362965163832018}, {"Year": 2006, "Stock": "Wipro", "Annual_Return": 0.34008193766972905}, {"Year": 2007, "Stock": "Wipro", "Annual_Return": -0.08189092968535627}, {"Year": 2008, "Stock": "Wipro", "Annual_Return": -0.6438595130171145}, {"Year": 2009, "Stock": "Wipro", "Annual_Return": 1.1624018954810547}, {"Year": 2010, "Stock": "Wipro", "Annual_Return": -0.18061150732119113}, {"Year": 2011, "Stock": "Wipro", "Annual_Return": -0.16901282690627695}, {"Year": 2012, "Stock": "Wipro", "Annual_Return": 0.018511658368533856}, {"Year": 2013, "Stock": "Wipro", "Annual_Return": 0.39712982904022043}, {"Year": 2014, "Stock": "Wipro", "Annual_Return": 0.021657982474518}, {"Year": 2015, "Stock": "Wipro", "Annual_Return": 0.034046756623240526}, {"Year": 2016, "Stock": "Wipro", "Annual_Return": -0.14654256788122144}, {"Year": 2017, "Stock": "Wipro", "Annual_Return": -0.19445215322844867}, {"Year": 2018, "Stock": "Wipro", "Annual_Return": 0.07653142092056409}, {"Year": 2019, "Stock": "Wipro", "Annual_Return": -0.24027692237836806}, {"Year": 2020, "Stock": "Wipro", "Annual_Return": 0.5285337851772304}, {"Year": 2021, "Stock": "Wipro", "Annual_Return": 0.2623039460485349}, {"Year": 2004, "Stock": "HCL Tech", "Annual_Return": 0.08782810536192587}, {"Year": 2005, "Stock": "HCL Tech", "Annual_Return": 0.5047410151562797}, {"Year": 2006, "Stock": "HCL Tech", "Annual_Return": 0.24473633576382858}, {"Year": 2007, "Stock": "HCL Tech", "Annual_Return": -0.4005174975618877}, {"Year": 2008, "Stock": "HCL Tech", "Annual_Return": -0.8187662974518003}, {"Year": 2009, "Stock": "HCL Tech", "Annual_Return": 1.3568647684136312}, {"Year": 2010, "Stock": "HCL Tech", "Annual_Return": 0.25390955153980743}, {"Year": 2011, "Stock": "HCL Tech", "Annual_Return": -0.09983014631234755}, {"Year": 2012, "Stock": "HCL Tech", "Annual_Return": 0.49587475745760545}, {"Year": 2013, "Stock": "HCL Tech", "Annual_Return": 0.7567040780366432}, {"Year": 2014, "Stock": "HCL Tech", "Annual_Return": 0.27589401526085766}, {"Year": 2015, "Stock": "HCL Tech", "Annual_Return": -0.3682467552902011}, {"Year": 2016, "Stock": "HCL Tech", "Annual_Return": -0.0040515752290049}, {"Year": 2017, "Stock": "HCL Tech", "Annual_Return": 0.09065617659241987}, {"Year": 2018, "Stock": "HCL Tech", "Annual_Return": 0.12014895885196741}, {"Year": 2019, "Stock": "HCL Tech", "Annual_Return": -0.31179840820247096}, {"Year": 2020, "Stock": "HCL Tech", "Annual_Return": 0.5883114584692412}, {"Year": 2021, "Stock": "HCL Tech", "Annual_Return": -0.036492314224546796}, {"Year": 2004, "Stock": "TCS", "Annual_Return": 0.309112460651636}, {"Year": 2005, "Stock": "TCS", "Annual_Return": 0.28163515320215493}, {"Year": 2006, "Stock": "TCS", "Annual_Return": -0.0762881487880267}, {"Year": 2007, "Stock": "TCS", "Annual_Return": -0.08192829409690083}, {"Year": 2008, "Stock": "TCS", "Annual_Return": -0.6513978823181321}, {"Year": 2009, "Stock": "TCS", "Annual_Return": 0.7448697406542386}, {"Year": 2010, "Stock": "TCS", "Annual_Return": 0.47534084045362246}, {"Year": 2011, "Stock": "TCS", "Annual_Return": 0.043994711569761646}, {"Year": 2012, "Stock": "TCS", "Annual_Return": 0.11139666496103195}, {"Year": 2013, "Stock": "TCS", "Annual_Return": 0.5792886943352095}, {"Year": 2014, "Stock": "TCS", "Annual_Return": 0.1971662386742189}, {"Year": 2015, "Stock": "TCS", "Annual_Return": -0.028418572182947188}, {"Year": 2016, "Stock": "TCS", "Annual_Return": -0.003957114117504212}, {"Year": 2017, "Stock": "TCS", "Annual_Return": 0.15292291333029195}, {"Year": 2018, "Stock": "TCS", "Annual_Return": -0.12528489935766285}, {"Year": 2019, "Stock": "TCS", "Annual_Return": 0.15813249587220035}, {"Year": 2020, "Stock": "TCS", "Annual_Return": 0.34290551630360244}, {"Year": 2021, "Stock": "TCS", "Annual_Return": 0.06923315964038201}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

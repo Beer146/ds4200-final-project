@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Sector Visualizations</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        :root {
+            --border: rgba(255, 255, 255, 0.1);
+            --accent: #38bdf8;
+            --card-bg: #1e293b;
+        }
+
+        /* Dashboard specific styling */
+        .viz-section {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto 40px auto;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            /* Dark background for the chart container */
+            background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.08), var(--card-bg));
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .viz-section h2 {
+            margin: 0;
+            padding: 15px 25px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            background: rgba(148, 163, 184, 0.05);
+            border-bottom: 1px solid var(--border);
+            color: var(--accent);
+        }
+
+        iframe {
+            width: 100%;
+            height: 650px;
+            border: none;
+            display: block;
+            background-color: white; /* Ensure charts have white background */
+        }
+
+        .takeaway {
+            padding: 20px 30px;
+            margin: 0;
+            line-height: 1.6;
+            color: #cbd5e1;
+            border-top: 1px solid var(--border);
+            font-size: 1rem;
+        }
+
+        .takeaway strong {
+            color: var(--accent);
+        }
+    </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <nav class="top-nav">
+        <a href="intro.html">Introduction & Data</a>
+        <a href="index.html">Cumulative Visualizations</a>
+        <a href="financial_sector.html"class="active">Financial Sector</a>
+        <a href="technology_sector.html">Technology Sector</a>
+        <a href="energysector.html" >Energy Sector</a>
+        <a href="analysis.html">Final Analysis</a>
+    </nav>
+
+    <h1>Financial Sector Analysis</h1>
+
+    <div class="viz-section">
+        <h2>Stock Price History (2004-2021)</h2>
+        <iframe src="financial_stock_prices.html"></iframe>
+        <p class="takeaway">
+            <strong>Takeaway:</strong> This chart tracks the long-term growth of India's major private and public sector banks. HDFC Bank and Kotak Mahindra Bank show consistent, exponential growth curves, reflecting their strong retail franchises and lower exposure to bad loans. In contrast, SBI (State Bank of India) and ICICI Bank show more cyclicality, particularly during the 2015-2018 period when the sector grappled with high Non-Performing Assets (NPAs).
+        </p>
+    </div>
+
+    <div class="viz-section">
+        <h2>Rolling Volatility (Risk Profile)</h2>
+        <iframe src="financial_volatility.html"></iframe>
+        <p class="takeaway">
+            <strong>Takeaway:</strong> Volatility analysis reveals the risk associated with each bank. Spikes in 2008 (Global Financial Crisis) and 2020 (COVID-19) are clearly visible across all stocks. HDFC Bank typically maintains the lowest volatility profile, acting as a defensive anchor in the portfolio. ICICI Bank and SBI tend to show higher volatility peaks during stress periods, offering higher risk but potentially higher beta during recoveries.
+        </p>
+    </div>
+
+    <div class="viz-section">
+        <h2>Trading Volume Trends</h2>
+        <iframe src="financial_volume.html"></iframe>
+        <p class="takeaway">
+            <strong>Takeaway:</strong> Trading volume often spikes during periods of uncertainty or major trend reversals. SBI frequently commands the highest trading volumes due to its massive public float and popularity among retail traders. Note the volume explosions during the 2020 crash, indicating panic selling followed by strong accumulation by institutional investors.
+        </p>
+    </div>
+
+    <div class="viz-section">
+        <h2>Annual Returns (Interactive)</h2>
+        <iframe src="financial_annual_returns.html" style="height: 500px;"></iframe>
+        <p class="takeaway">
+            <strong>Takeaway:</strong> This interactive bar chart allows you to compare year-on-year performance. While the financial sector is generally a wealth creator, negative years like 2008, 2011, and 2015 highlight the cyclical risks. <em>(Click the legend items to filter for specific banks like HDFC or Kotak to see their individual consistency.)</em>
+        </p>
+    </div>
+
+    <div class="viz-section">
+        <h2>Risk vs. Return Profile</h2>
+        <iframe src="financial_risk_return.html" style="height: 500px;"></iframe>
+        <p class="takeaway">
+            <strong>Takeaway:</strong> The Risk-Reward scatter plot is the ultimate summary of the sector. Ideally, stocks should be in the "top-left" (High Return, Low Risk). HDFC Bank typically occupies this sweet spot. Stocks further to the right (like SBI) have delivered returns but at a "cost" of much higher daily price swings, requiring a stronger stomach from investors.
+        </p>
+    </div>
+
+  </div> </body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Sector Analysis</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-title {
+            margin: 0 0 30px 0;
+            font-size: 1.8rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .viz-section {
+            margin-bottom: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.12), #0f172a);
+            overflow: hidden;
+        }
+
+        .viz-section h2 {
+            margin: 0;
+            padding: 15px 20px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            background: rgba(148, 163, 184, 0.07);
+            border-bottom: 1px solid var(--border);
+            color: var(--accent);
+        }
+
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <a href="intro.html">Introduction & Data</a>
+        <a href="index.html">Cumulative Visualizations</a>
+        <a href="financial_sector.html">Financial Sector</a>
+        <a href="technology_sector.html">Technology Sector</a>
+        <a href="energysector.html" class="active">Energy Sector</a>
+        <a href="analysis.html">Final Analysis</a>
+    </nav>
+
+    <h1>Energy Sector Analysis</h1>
+
+    <div class="viz-section">
+        <h2>Cumulative Returns Over Time</h2>
+        <iframe src="viz1_cumulative_returns.html"></iframe>
+        <p class="takeaway">
+            <strong>Takeaway:</strong> Reliance Industries emerged as the dominant performer in the energy sector, delivering cumulative returns of 800-900% by 2021, much higher than many of its peers. This outstanding growth was driven by its strategic shift from a traditional oil and gas company into a diversified conglomerate spanning telecom (Jio), retail, and digital services. On the other hand,  ONGC followed a dramatic boom-and-bust trajectory, soaring to 600-700% returns during the mid-2000s commodity boom before collapsing to just 50% by 2021, highlighting the risks of pure commodity exposure. NTPC and PowerGrid delivered modest but steady returns in the 100-200% range, reflecting their regulated utility business models that prioritize stability over growth. The 2008 Financial Crisis and 2020 COVID crash both caused sharp declines, but Reliance recovered quickly while ONGC never regained its former highs.
+        </p>
+    </div>
+
+    <div class="viz-section">
+        <h2>Volatility Comparison</h2>
+        <iframe src="viz2_volatility_comparison.html"></iframe>
+        <p class="takeaway">
+            <strong>Takeaway:</strong> This chart reveals the risk profiles behind the return differences. ONGC consistently exhibited the highest volatility, reaching a peak of nearly 10% during 2009-2010—a direct consequence of its exposure to global oil price swings. When oil prices crashed, ONGC shareholders experienced severe turbulence. NTPC emerged as the stability leader, maintaining the lowest and most consistent volatility throughout the period due to its regulated power generation model that insulates it from market shocks. Reliance showed moderate but persistent volatility, with notable spikes during the 2008 crisis, 2018, and the COVID crash. PowerGrid, despite being a utility, displayed more volatility than expected during crisis periods. The shaded regions clearly show that both 2008 and 2020 triggered sector-wide volatility spikes, but regulated utilities recovered their stability much faster than commodity-exposed companies.
+        </p>
+    </div>
+
+    <div class="viz-section">
+        <h2>Volume vs Return</h2>
+        <iframe src="viz3_volume_vs_return.html"></iframe>
+        <p class="takeaway">
+            <strong>Takeaway:</strong> This animated scatter plot reveals how investor behavior differs across energy stocks. Reliance consistently commands the highest trading volumes regardless of whether returns are positive or negative, reflecting strong institutional and retail interest driven by its growth narrative and index weight. ONGC's position swings dramatically between the positive and negative return quadrants as oil prices fluctuate, with volume often spiking during negative years—suggesting reactive, panic-driven trading rather than strategic accumulation. NTPC and PowerGrid cluster in the lower-volume region with more stable returns, indicating that investors treat them as steady, dividend-oriented holdings rather than active trading opportunities. Watch how 2008 and 2020 push most stocks into negative return territory with elevated volumes, while recovery years see a gradual shift back to the positive side.
+        </p>
+    </div>
+    <div class="viz-section">
+        <h2>Stock Price History</h2>
+        <iframe src="viz4_stock_prices.html"></iframe>
+        <p class="takeaway">
+            <strong>Takeaway:</strong> Each stock tells a very different story. Reliance started around ₹400, peaked at ₹3,000 before the 2008 crash, fell to around ₹800, then recovered strongly after 2017 to reach ₹2,500 by 2021. ONGC shows a classic boom/bust pattern as it rised from ₹100 to peak at ₹1,400 around 2008, then steadily declining to under ₹100 by 2021, never recovering its highs. NTPC peaked early around ₹280 in 2008, then spent over a decade in decline, falling to around ₹80 by 2020. PowerGrid is the only stock showing consistent long-term growth, steadily climbing from ₹50 in 2008 to over ₹200 by 2021 with relatively smooth upward movement.
+        </p>
+    </div>
+    
+    <div class="viz-section">
+        <h2>Annual Returns</h2>
+        <iframe src="viz5_annual_returns.html"></iframe>
+        <p class="takeaway">
+            <strong>Takeaway:</strong> Annual returns show dramatic swings across years. 2007 was the best year for the sector, with combined returns exceeding 280%—ONGC, NTPC, and PowerGrid all posted huge gains. 2008 was devastating, with total losses around -170% as all stocks crashed during the financial crisis. 2009 saw a strong recovery with returns around 130%. The early 2000s (2002-2003, 2005-2006) also showed strong positive years with returns above 100%. Since 2012, returns have been much more moderate, with smaller bars in both directions. ONGC consistently shows the largest swings in both directions, while NTPC  often moves opposite to the others. Clickk the legend to isolate individual stocks and see their year-by-year performance.
+    </p>
+    </div>
+
+</body>
+</html>
+```
