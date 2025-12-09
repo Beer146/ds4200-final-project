@@ -2,7 +2,7 @@ DS4200 Final Project: Visualization Design Rationale
 NIFTY-50 Stock Market Analysis (2000-2021)
 Team Members: Abhir, Mitch, Arvind
                                                 
-
+https://beer146.github.io/ds4200-final-project/
 
 
 PROJECT OVERVIEW:
